@@ -213,27 +213,68 @@
 // Нумерация должна начинаться с 1. К примеру для первого элемента массива
 // ['Mango', 'Poly', 'Ajax'] с индексом 0 будет выведено '1 - Mango',
 // а для индекса 2 выведет '3 - Ajax'.
-const logItems = function(array) {
-  const copyOfArray = array;
-  console.log(copyOfArray);
 
-  for (let i = 1; i < array.length + 1; i += 1) {
-    console.log([i] + "-" + copyOfArray[i - 1]);
-  }
-}
-  logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+
+// const logItems = function(array) {
+//   const copyOfArray = array;
+//   console.log(copyOfArray);
+
+//   for (let i = 1; i < array.length + 1; i += 1) {
+//     console.log([i] + "-" + copyOfArray[i - 1]);
+//   }
+// }
+//   logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
   
-  logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+//   logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 
 
 //============================================== #8 ========================================================
 
 
+// Напиши скрипт подсчета стоимости гравировки украшений.
+// Для этого создай функцию calculateEngravingPrice(message, pricePerWord)
+// принимающую строку (в строке будут только слова и пробелы) и цену гравировки одного слова,
+// и возвращающую цену гравировки всех слов в строке.
+//debugger
+// const calculateEngravingPrice = function(message, pricePerWord) {
+//     for (let i = 1; i < message.length; i += 1) {
+//         const words = message.split(" ");
+//         console.log(words);
+//         const totalPrice = words.length * pricePerWord;
+//        // return totalPrice;
+//         // const words = message.split(" ");
+//         // let price = pricePerWord;
+//         // price = Number(pricePerWord);
+//         // totalPrice = words.length * price;
+//         console.log (`Цена гравировки всех слов = ${totalPrice}`)
+//         return totalPrice;
+
+//     }
+//   };
+  
+//   console.log(
+//     calculateEngravingPrice(
+//       'Proin sociis natoque et magnis parturient montes mus',10,),
+//   ); // 80
+  
+//   console.log(
+//     calculateEngravingPrice(
+//       'Proin sociis natoque et magnis parturient montes mus',20,),
+//   ); // 160
+  
+//   console.log(
+//     calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
+//   ); // 240
+  
+//   console.log(
+//     calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
+//   ); // 120
+
+
+//============================================== #9 ========================================================
 
 
 
-
-//============================================== #1 ========================================================
 //============================================== #1 ========================================================
 //============================================== #1 ========================================================
 //============================================== #1 ========================================================
