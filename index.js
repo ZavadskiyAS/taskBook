@@ -307,51 +307,80 @@
 // и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
 
 
-const formatString = function(string) {
-   const words = string
-   let newWords;
-   if (words.length >= 40){
-    newWords = string.slice(0, 41) + '...';
-  } else {
-    newWords = string;
-  }
-  return newWords;
-};
-  console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-  // вернется оригинальная строка
-  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-  // вернется форматированная строка
-  console.log(formatString('Curabitur ligula sapien.'));
-  // вернется оригинальная строка
-  console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',),);
-  // вернется форматированная строка
+// const formatString = function(string) {
+//    const words = string
+//    let newWords;
+//    if (words.length >= 40){
+//     newWords = string.slice(0, 41) + '...';
+//   } else {
+//     newWords = string;
+//   }
+//   return newWords;
+// };
+//   console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+//   // вернется оригинальная строка
+//   console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+//   // вернется форматированная строка
+//   console.log(formatString('Curabitur ligula sapien.'));
+//   // вернется оригинальная строка
+//   console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',),);
+//   // вернется форматированная строка
 
 
 //============================================== #11 ========================================================
-
+//!
 
 // Напиши функцию checkForSpam(message), принимающую 1 параметр message - строку.
-// Функция проверяет ее на содержание слов spam и sale. Если нашли зарещенное слово то функция возвращает true,
+// Функция проверяет ее на содержание слов spam и sale. Если нашли запрещенное слово то функция возвращает true,
 // если запрещенных слов нет функция возвращает false. Слова в строке могут быть в произвольном регистре.
 
-const checkForSpam = function(message) {
-    // твой код
-  };
+// const checkForSpam = function(message) {
+//   };
   
-  /*
-   * Вызовы функции для проверки работоспособности твоей реализации.
-   */
-  console.log(checkForSpam('Latest technology news')); // false
+//   console.log(checkForSpam('Latest technology news')); // false
   
-  console.log(checkForSpam('JavaScript weekly newsletter')); // false
+//   console.log(checkForSpam('JavaScript weekly newsletter')); // false
   
-  console.log(checkForSpam('Get best sale offers now!')); // true
+//   console.log(checkForSpam('Get best sale offers now!')); // true
   
-  console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+//   console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 
 
+
+//============================================== #12 ========================================================
+
+
+// Напиши функцию-конструктор Account, которая создает объект со свойствами login и email.
+// В prototype функции-конструктора добавь метод getInfo(),
+// который выводит в консоль значения полей login и email объекта который его вызвал.
+
+const Account = function({login, email}) {
+  this.login = login;
+  this.email = email;
   
-//============================================== #1 ========================================================
+};
+
+    Account.prototype.getInfo = function() {
+      console.log(`Login:${this.login}, Email:${this.email}`);
+    };
+
+console.log(Account.prototype.getInfo); // function
+
+const mango = new Account({
+  login: 'Mangozedog',
+  email: 'mango@dog.woof',
+});
+
+mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+
+const poly = new Account({
+  login: 'Poly',
+  email: 'poly@mail.com',
+});
+
+poly.getInfo(); // Login: Poly, Email: poly@mail.com
+
+
 //============================================== #1 ========================================================
 //============================================== #1 ========================================================
 //============================================== #1 ========================================================
