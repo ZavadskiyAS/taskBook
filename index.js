@@ -452,6 +452,8 @@
     let number = 5;
     const leftBorderWidth = 1;
     let arr = ['plaum.png'];
+    const answer = prompt("вам есть 18?", "18");
+    console.log('тип данных:>> ', typeof(answer));
 
 
 
