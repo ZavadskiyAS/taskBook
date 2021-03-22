@@ -449,18 +449,29 @@
 
 //!============================================== #15 ========================================================
 
-    let number = 5;
-    const leftBorderWidth = 1;
-    let arr = ['plaum.png'];
-    const answer = prompt("вам есть 18?", "18");
-    console.log('тип данных:>> ', typeof(answer));
+    // let number = 5;
+    // const leftBorderWidth = 1;
+    // let arr = ['plaum.png'];
+    // const answer = prompt("вам есть 18?", "18");
+    // console.log('тип данных:>> ', typeof(answer));
     const answers = [];
 
     answers[0] = prompt("как ваше имя?", "");
     answers[1] = prompt("как ваше фамилия?", "");
     answers[2] = prompt("сколько вам лет?", "");
 
+    console.log('sting+ :>> ', 4 + +"5");
+
+    let incr = 10;
+        decr = 10;
+    incr++;
+    decr--;
+    console.log('incr :>> ', incr);
+    console.log('decr :>> ', decr);
+
     // document.write(answers);
+
+
 
 
 
