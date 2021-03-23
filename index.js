@@ -469,7 +469,10 @@
     console.log('incr :>> ', incr);
     console.log('decr :>> ', decr);
 
-    // document.write(answers);
+    document.write(answers);
+
+    const  namber = 5+5*5 !== 15;
+    
 
 
 
