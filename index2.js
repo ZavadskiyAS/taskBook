@@ -2,10 +2,25 @@
 //? Создать переменную numberOfLilms и в неё поместить ответ от пользователя на вопрос:
 //? 'Сколько фильмов вы уже посмотрели'
 
-const numberOfLilms = 'Сколько фильмов вы уже посмотрели';
+//? Создать объект personalMovieBD и в него поместить такие свойства:
+//?     - count - сюда передается ответ на первый вопрос
+//?     - movies - в это свойство поместить пустой объект
+//?     - actors - тоже поместить пустой объект
+//?     - genres - сюда поместить пустой массив
+//?     - privat - в это свойство поместить booleam(логическое) значение false
 
+const massageOne = prompt('Сколько фильмов вы уже посмотрели') 
+let numberOfLilms = massageOne;
 
+const personalMovieBD = {
+    'count': numberOfLilms,
+    'movies': {},
+    'actors': {},
+    'genres': [],
+    'privat': false,
 
+}
+console.log('personalMovieBD :>> ', personalMovieBD);
 
 
 
