@@ -454,25 +454,25 @@
     // let arr = ['plaum.png'];
     // const answer = prompt("вам есть 18?", "18");
     // console.log('тип данных:>> ', typeof(answer));
-    const answers = [];
+    // const answers = [];
 
-    answers[0] = prompt("как ваше имя?", "");
-    answers[1] = prompt("как ваше фамилия?", "");
-    answers[2] = prompt("сколько вам лет?", "");
+    // answers[0] = prompt("как ваше имя?", "");
+    // answers[1] = prompt("как ваше фамилия?", "");
+    // answers[2] = prompt("сколько вам лет?", "");
 
-    console.log('sting+ :>> ', 4 + +"5");
+    // console.log('sting+ :>> ', 4 + +"5");
 
-    let incr = 10;
-        decr = 10;
-    incr++;
-    decr--;
-    console.log('incr :>> ', incr);
-    console.log('decr :>> ', decr);
+    // let incr = 10;
+    //     decr = 10;
+    // incr++;
+    // decr--;
+    // console.log('incr :>> ', incr);
+    // console.log('decr :>> ', decr);
 
-    document.write(answers);
+    // document.write(answers);
 
-    const  namber = 5+5*5 !== 15;
-    
+    // const  namber = 5+5*5 !== 15;
+
 
 
 
