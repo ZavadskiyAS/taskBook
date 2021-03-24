@@ -53,10 +53,6 @@
 
 
 const numberOfLilms = +prompt('Сколько фильмов вы уже посмотрели', '')
-// const nameFilm1 = prompt('Один из последних просмотренных фильмов?','')
-// const rating1 = prompt('На сколько оцените его?','')
-// const nameFilm2 = prompt('Один из последних просмотренных фильмов?','')
-// const rating2 = prompt('На сколько оцените его?','') 
 
 const personalMovieBD = {
      count  : numberOfLilms,
@@ -67,15 +63,11 @@ const personalMovieBD = {
 
 }
 
-
-for (i = 1; nameFilm1,rating1 <= 2; i++){
-     let nameFilm1 = prompt('Один из последних просмотренных фильмов?','')
-     let rating1 = prompt('На сколько оцените его?','')
-     personalMovieBD.movies[nameFilm1] = rating1;
-     personalMovieBD.movies[nameFilm2] = rating2;
-     nameFilm1++;
-     rating1++;
-     
+for (let i = 0; i < 2; i++){
+     const nameFilm = prompt('Один из последних просмотренных фильмов?','')
+     const rating = prompt('На сколько оцените его?','')
+     personalMovieBD.movies[nameFilm] = rating;
+  
 }
 
 console.log('personalMovieBD :>> ', personalMovieBD);
