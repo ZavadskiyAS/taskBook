@@ -15,34 +15,34 @@
 //? Ответы стоит поместить в отдельные переменные
 //? Записать ответы в объект movies в формате :
 //? movies:{
-     //?     'logan': '8.1'
-     //? }
-     //? Проверить что бы все работало без ошибок в консоли
+//?     'logan': '8.1'
+//? }
+//? Проверить что бы все работало без ошибок в консоли
 
-     // const numberOfLilms = +prompt('Сколько фильмов вы уже посмотрели', '')
-     // const nameFilm1 = prompt('Один из последних просмотренных фильмов?','')
-     // const rating1 = prompt('На сколько оцените его?','')
-     // const nameFilm2 = prompt('Один из последних просмотренных фильмов?','')
-     // const rating2 = prompt('На сколько оцените его?','') 
-     
-     // const personalMovieBD = {
-     //      count  : numberOfLilms,
-     //      movies : {},
-     //      actors : {},
-     //      genres : [],
-     //      privat : false,
-     
-     // }
-     // personalMovieBD.movies[nameFilm1] = rating1;
-     // personalMovieBD.movies[nameFilm2] = rating2;
-     
-     // console.log('personalMovieBD :>> ', personalMovieBD);
+// const numberOfLilms = +prompt('Сколько фильмов вы уже посмотрели', '')
+// const nameFilm1 = prompt('Один из последних просмотренных фильмов?','')
+// const rating1 = prompt('На сколько оцените его?','')
+// const nameFilm2 = prompt('Один из последних просмотренных фильмов?','')
+// const rating2 = prompt('На сколько оцените его?','')
+
+// const personalMovieBD = {
+//      count  : numberOfLilms,
+//      movies : {},
+//      actors : {},
+//      genres : [],
+//      privat : false,
+
+// }
+// personalMovieBD.movies[nameFilm1] = rating1;
+// personalMovieBD.movies[nameFilm2] = rating2;
+
+// console.log('personalMovieBD :>> ', personalMovieBD);
 //!============================================== #2 ========================================================
 //? Автоматизировать вопросы пользователю про фильмы при помощт цикла
 
 //? Сделать так, чтобы пользователь не смог отставить ответ в виде пустой строки,
 //? отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит -
-//? возвращаем пользователя к вопросам опять. (К любой строке можно обратиться как 
+//? возвращаем пользователя к вопросам опять. (К любой строке можно обратиться как
 //? str.length - и получить её длину)
 
 //? При помощи условий проверить personalMovieBD.count, и если он меньше 10 - вывести сообщение
@@ -51,32 +51,44 @@
 
 //? Потренироваться и переписать цикл еще двумя способами
 
-
-const numberOfLilms = prompt('Сколько фильмов вы уже посмотрели', '')
+const numberOfLilms = +prompt("Сколько фильмов вы уже посмотрели", "");
 
 const personalMovieBD = {
-     count  : numberOfLilms,
-     movies : {},
-     actors : {},
-     genres : [],
-     privat : false,
+  count: numberOfLilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
 
+for (let i = 0; i < 2; i++) {
+  const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+  const rating = prompt("На сколько оцените его?", "");
+  if (
+    nameFilm != null &&
+    rating != null &&
+    nameFilm != "" &&
+    rating != "" &&
+    nameFilm.length < 50
+  ) {
+    personalMovieBD.movies[nameFilm] = rating;
+  } else {
+    console.log("error");
+    i--;
+  }
 }
 
-for (let i = 0; i < 2; i++){
-     const nameFilm = prompt('Один из последних просмотренных фильмов?','')
-     const rating = prompt('На сколько оцените его?','')
-     if (nameFilm != null && rating != null && nameFilm != '' && rating != '' && nameFilm.length < 50) {
-          personalMovieBD.movies[nameFilm] = rating;
-     } else {
-          console.log('error');
-          i--;
-     }
-     }
+if (personalMovieBD.count < 10) {
+  alert("Посмотрено довольно мало фильмов");
+} else if (personalMovieBD.count >= 10 && personalMovieBD.count < 30) {
+  alert("Вы классический зритель");
+} else if (personalMovieBD.count >= 30) {
+  alert("Вы киноман");
+} else {
+  alert("Error");
+}
 
-console.log('personalMovieBD :>> ', personalMovieBD);
-
-
+console.log("personalMovieBD :>> ", personalMovieBD);
 
 //!============================================== #3 ========================================================
 //!============================================== #4 ========================================================
