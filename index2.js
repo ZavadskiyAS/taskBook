@@ -51,47 +51,69 @@
 
 //? Потренироваться и переписать цикл еще двумя способами
 
-const numberOfLilms = +prompt("Сколько фильмов вы уже посмотрели", "");
+// const numberOfLilms = +prompt("Сколько фильмов вы уже посмотрели", "");
 
-const personalMovieBD = {
-  count: numberOfLilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false,
-};
+// const personalMovieBD = {
+//   count: numberOfLilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false,
+// };
+ 
+// for (let i = 0; i < 2; i++) {
+//   const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+//   const rating = prompt("На сколько оцените его?", "");
+//   if (
+//     nameFilm != null &&
+//     rating != null &&
+//     nameFilm != "" &&
+//     rating != "" &&
+//     nameFilm.length < 50
+//   ) {
+//     personalMovieBD.movies[nameFilm] = rating;
+//   } else {
+//     console.log("error");
+//     i--;
+//   }
+// }
 
-for (let i = 0; i < 2; i++) {
-  const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
-  const rating = prompt("На сколько оцените его?", "");
-  if (
-    nameFilm != null &&
-    rating != null &&
-    nameFilm != "" &&
-    rating != "" &&
-    nameFilm.length < 50
-  ) {
-    personalMovieBD.movies[nameFilm] = rating;
-  } else {
-    console.log("error");
-    i--;
-  }
-}
+// if (personalMovieBD.count < 10) {
+//   alert("Посмотрено довольно мало фильмов");
+// } else if (personalMovieBD.count >= 10 && personalMovieBD.count < 30) {
+//   alert("Вы классический зритель");
+// } else if (personalMovieBD.count >= 30) {
+//   alert("Вы киноман");
+// } else {
+//   alert("Error");
+// }
 
-if (personalMovieBD.count < 10) {
-  alert("Посмотрено довольно мало фильмов");
-} else if (personalMovieBD.count >= 10 && personalMovieBD.count < 30) {
-  alert("Вы классический зритель");
-} else if (personalMovieBD.count >= 30) {
-  alert("Вы киноман");
-} else {
-  alert("Error");
-}
-
-console.log("personalMovieBD :>> ", personalMovieBD);
+// console.log("personalMovieBD :>> ", personalMovieBD);
 
 //!============================================== #3 ========================================================
 //!============================================== #4 ========================================================
+
+const options = {
+    name : 'test',
+    width : 1024,
+    height : 1024,
+    colors : {
+        border : 'black',
+        bg : 'red'
+    }
+}
+
+console.log('options :>> ', options.name);
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Свойсто ${i} имеет значение ${options[key] [i]}`);
+        }
+    } else {
+        console.log(`Свойсто ${i} имеет значение ${options[key]}`);
+    }
+}
 //!============================================== #5 ========================================================
 //!============================================== #6 ========================================================
 //!============================================== #7 ========================================================
