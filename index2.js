@@ -91,29 +91,95 @@
 // console.log("personalMovieBD :>> ", personalMovieBD);
 
 //!============================================== #3 ========================================================
+
+//? Создать функцию showmyBD, которавя будет проверять свойство privat. Если стоит в позиции 
+//? false - выводит в консоль главный объект программы.
+
+//? Создать функцию wreiteYourGenres  в которой пользователь будет 3 раза отвечать на вопрос
+//? "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных genres
+
+
+let numberOfLilms;
+
+function start() {
+    numberOfLilms = +prompt("Сколько фильмов вы уже посмотрели", "");
+
+    while (numberOfLilms == '' || numberOfLilms == null || isNaN(numberOfLilms)) {
+        numberOfLilms = +prompt("Сколько фильмов вы уже посмотрели", "");
+    }
+}
+start();
+
+
+const personalMovieBD = {
+  count: numberOfLilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
+ 
+function rememberMyFilms() {
+
+    for (let i = 0; i < 2; i++) {
+      const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+      const rating = prompt("На сколько оцените его?", "");
+      if (
+        nameFilm != null &&
+        rating != null &&
+        nameFilm != "" &&
+        rating != "" &&
+        nameFilm.length < 50
+      ) {
+        personalMovieBD.movies[nameFilm] = rating;
+      } else {
+        console.log("error");
+        i--;
+      }
+    }
+}
+
+rememberMyFilms();
+
+function detectParsonaLevel() {
+    
+    if (personalMovieBD.count < 10) {
+      alert("Посмотрено довольно мало фильмов");
+    } else if (personalMovieBD.count >= 10 && personalMovieBD.count < 30) {
+      alert("Вы классический зритель");
+    } else if (personalMovieBD.count >= 30) {
+      alert("Вы киноман");
+    } else {
+      alert("Error");
+    }
+}
+
+detectParsonaLevel();
+
+console.log("personalMovieBD :>> ", personalMovieBD);
 //!============================================== #4 ========================================================
 
-const options = {
-    name : 'test',
-    width : 1024,
-    height : 1024,
-    colors : {
-        border : 'black',
-        bg : 'red'
-    }
-}
+// const options = {
+//     name : 'test',
+//     width : 1024,
+//     height : 1024,
+//     colors : {
+//         border : 'black',
+//         bg : 'red'
+//     }
+// }
 
-console.log('options :>> ', options.name);
+// console.log('options :>> ', options.name);
 
-for (let key in options) {
-    if (typeof(options[key]) === 'object') {
-        for (let i in options[key]) {
-            console.log(`Свойсто ${i} имеет значение ${options[key] [i]}`);
-        }
-    } else {
-        console.log(`Свойсто ${i} имеет значение ${options[key]}`);
-    }
-}
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in options[key]) {
+//             console.log(`Свойсто ${i} имеет значение ${options[key] [i]}`);
+//         }
+//     } else {
+//         console.log(`Свойсто ${i} имеет значение ${options[key]}`);
+//     }
+// }
 //!============================================== #5 ========================================================
 //!============================================== #6 ========================================================
 //!============================================== #7 ========================================================
