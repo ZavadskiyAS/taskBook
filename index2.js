@@ -156,6 +156,24 @@ function detectParsonaLevel() {
 
 detectParsonaLevel();
 
+function wreiteYourGenres() {
+  for (let i = 0; i < 3; i++) {
+    const janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
+    if (
+      janr != null &&
+      janr.length < 50
+    ) {
+      personalMovieBD.genres.push(janr)
+    } else {
+      console.log("error");
+      i--;
+    }
+  }
+}
+
+wreiteYourGenres();
+
+
 console.log("personalMovieBD :>> ", personalMovieBD);
 //!============================================== #4 ========================================================
 
