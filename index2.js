@@ -177,27 +177,25 @@
 // console.log("personalMovieBD :>> ", personalMovieBD);
 //!============================================== #4 ========================================================
 
-const options = {
-    name : 'test',
-    width : 1024,
-    height : 1024,
-    colors : {
-        border : 'black',
-        bg : 'red'
-    }
+const test = {
+    name : 'Alex',
+    age : 29,
+    email : 'safas@fsf',
+    status : true,
+    avatar : false,
+    video : {
+        video1 : true,
+        video2 : true,
+        video3 : false
+    },
+    long : 1.82,
+    weight : '80kg',
+
 }
 
-console.log('options :>> ', options.name);
+const testArr = Object.keys(test.email);
 
-for (let key in options) {
-    if (typeof(options[key]) === 'object') {
-        for (let i in options[key]) {
-            console.log(`Свойсто ${i} имеет значение ${options[key] [i]}`);
-        }
-    } else {
-        console.log(`Свойсто ${i} имеет значение ${options[key]}`);
-    }
-}
+console.log(testArr);
 //!============================================== #5 ========================================================
 
 //!============================================== #6 ========================================================
