@@ -177,74 +177,37 @@
 // console.log("personalMovieBD :>> ", personalMovieBD);
 //!============================================== #4 ========================================================
 
-const test = {
-    name : 'Alex',
-    age : 29,
-    email : 'safas@fsf',
-    status : true,
-    avatar : false,
-    video : {
-        video1 : true,
-        video2 : true,
-        video3 : false
-    },
-    long : 1.82,
-    weight : '80kg',
+// const test = {
+//     name : 'Alex',
+//     age : 29,
+//     email : 'safas@fsf',
+//     status : true,
+//     avatar : false,
+//     video : {
+//         video1 : true,
+//         video2 : true,
+//         video3 : false
+//     },
+//     long : 1.82,
+//     weight : '80kg',
 
-}
+// }
 
-const testArr = Object.keys(test.email);
+// const testArr = Object.keys(test.email);
 
-console.log(testArr);
+// console.log(testArr);
+
 //!============================================== #5 ========================================================
 
-// let arr = [];
+let arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 
-// let arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+let arr2 = [1, 2, 'a', 'b', null, true, false];
 
-// let arr = [1, 2, 'a', 'b', null, true, false];
+const arr3 = [...arr, ...arr2, 15, 12, 5]
+
+console.log('arr3 :>> ', arr3);
 
 //!============================================== #6 ========================================================
-
-let a = 5,
-    b = a;
-
-b = b + 5;
-
-const obj = {
-    a: 5,
-    b: 1,
-};
-
-function copy(mainObj) {
-    let objCopy = {};
-
-    let key;
-
-    for (key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-
-    return objCopy;
-}
-
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
-    }
-};
-
-const newNumbers = copy(numbers);
-
-newNumbers.a = 10;
-
-console.log('newNumbers :>> ', newNumbers);
-
-
-
 //!=========================================== #7 ========================================================
 //!============================================== #8 ========================================================
 //!============================================== #9 ========================================================
