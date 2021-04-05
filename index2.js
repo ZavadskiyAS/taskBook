@@ -182,56 +182,28 @@
 //? Такое случается в реальных продуктах при смене технологий или подхода к архитектуре программы
 
 //? Создать метод toggleVisibleDB, который при вызове будет проверять свойство privat. Если
-//? оно false - он переключает его в true, если true- переключает в false. Протестировать вмете с shoMyBD.
+//? оно false - он переключает его в true, если true- переключает в false. Протестировать вмете с showMyBD.
 
 //? В методе writeYourGenres запретить пользователю нажать кнопку "отмена" или оставлять пустую строку.
 //? Если он это сделал - возвращать его к этому же вопросу.  После того , как все жанры введены -
 //? при помощи метода forEach вывести в консоль сообщение в таком виде:
 //? "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"
 
-let numberOfLilms;
-
-function start() {
-    numberOfLilms = +prompt("Сколько фильмов вы уже посмотрели", "");
-
-    while (numberOfLilms == '' || numberOfLilms == null || isNaN(numberOfLilms)) {
-        numberOfLilms = +prompt("Сколько фильмов вы уже посмотрели", "");
-    }
-}
-start();
-5
 
 const personalMovieBD = {
-  count: numberOfLilms,
+  count: 0,
   movies: {},
   actors: {},
   genres: [],
   privat: false,
-};
- 
-function rememberMyFilms() {
+  start: function() {
+    personalMovieBD.count = +prompt("Сколько фильмов вы уже посмотрели", "");
 
-    for (let i = 0; i < 2; i++) {
-      const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
-      const rating = prompt("На сколько оцените его?", "");
-      if (
-        nameFilm != null &&
-        rating != null &&
-        nameFilm != "" &&
-        rating != "" &&
-        nameFilm.length < 50
-      ) {
-        personalMovieBD.movies[nameFilm] = rating;
-      } else {
-        console.log("error");
-        i--;
-      }
+    while (personalMovieBD.count == '' || personalMovieBD.count == null || isNaN(personalMovieBD.count)) {
+      personalMovieBD.count = +prompt("Сколько фильмов вы уже посмотрели", "");
     }
-}
-
-rememberMyFilms();
-
-function detectParsonaLevel() {
+  },
+  detectParsonaLevel: function() {
     
     if (personalMovieBD.count < 10) {
       alert("Посмотрено довольно мало фильмов");
@@ -242,29 +214,64 @@ function detectParsonaLevel() {
     } else {
       alert("Error");
     }
-}
+  },
+  showMyBD: function(hidden) {
+    if (!hidden) {
+      console.log(personalMovieBD);
+    }
+  },
+   
+  rememberMyFilms: function() {
 
-detectParsonaLevel();
-
-function wreiteYourGenres() {
-  for (let i = 0; i < 3; i++) {
-    const janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
+  for (let i = 0; i < 2; i++) {
+    const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+    const rating = prompt("На сколько оцените его?", "");
     if (
-      janr != null &&
-      janr.length < 50
+      nameFilm != null &&
+      rating != null &&
+      nameFilm != "" &&
+      rating != "" &&
+      nameFilm.length < 50
     ) {
-      personalMovieBD.genres.push(janr)
+      personalMovieBD.movies[nameFilm] = rating;
     } else {
       console.log("error");
       i--;
+      }
+    }
+  },
+  wreiteYourGenres : function () {
+    for (let i = 0; i < 3; i++) {
+      const janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
+      if (
+        janr != null &&
+        janr.length < 50
+      ) {
+        personalMovieBD.genres.push(janr)
+      } else {
+        console.log("error");
+        i--;
+      }
     }
   }
-}
 
-wreiteYourGenres();
+};
+
+personalMovieBD.start();
+
+personalMovieBD.rememberMyFilms();
+
+
+personalMovieBD.detectParsonaLevel();
+
+personalMovieBD.wreiteYourGenres();
 
 
 console.log("personalMovieBD :>> ", personalMovieBD);
+
+
+
+
 
 //!============================================== #5 ========================================================
 
