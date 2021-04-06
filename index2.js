@@ -240,6 +240,14 @@ const personalMovieBD = {
       }
     }
   },
+  toggleVisibleMyBD: function() {
+    if (personalMovieBD.privat) {
+      personalMovieBD.privat = false;
+    }
+    else {
+      personalMovieBD.privat = true;
+    }
+  },
   wreiteYourGenres : function () {
     for (let i = 0; i < 3; i++) {
       const janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
@@ -261,16 +269,13 @@ personalMovieBD.start();
 
 personalMovieBD.rememberMyFilms();
 
-
 personalMovieBD.detectParsonaLevel();
 
 personalMovieBD.wreiteYourGenres();
 
 
+
 console.log("personalMovieBD :>> ", personalMovieBD);
-
-
-
 
 
 //!============================================== #5 ========================================================
