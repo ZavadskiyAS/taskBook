@@ -215,70 +215,72 @@ const personalMovieBD = {
       alert("Error");
     }
   },
-  showMyBD: function(hidden) {
-    if (!hidden) {
-      console.log(personalMovieBD);
-    }
-  },
-   
+  
   rememberMyFilms: function() {
-
-  for (let i = 0; i < 2; i++) {
-    const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
-    const rating = prompt("На сколько оцените его?", "");
-    if (
-      nameFilm != null &&
-      rating != null &&
-      nameFilm != "" &&
-      rating != "" &&
-      nameFilm.length < 50
-    ) {
-      personalMovieBD.movies[nameFilm] = rating;
-    } else {
-      console.log("error");
-      i--;
-      }
-    }
-  },
-  toggleVisibleMyBD: function() {
-    if (personalMovieBD.privat) {
-      personalMovieBD.privat = false;
-    }
-    else {
-      personalMovieBD.privat = true;
-    }
-  },
-  wreiteYourGenres : function () {
-    for (let i = 0; i < 3; i++) {
-      const janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
+    
+    for (let i = 0; i < 2; i++) {
+      const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+      const rating = prompt("На сколько оцените его?", "");
       if (
-        janr != null &&
-        janr.length < 50
-      ) {
-        personalMovieBD.genres.push(janr)
-      } else {
-        console.log("error");
-        i--;
+        nameFilm != null &&
+        rating != null &&
+        nameFilm != "" &&
+        rating != "" &&
+        nameFilm.length < 50
+        ) {
+          personalMovieBD.movies[nameFilm] = rating;
+        } else {
+          console.log("error");
+          i--;
+        }
       }
-    }
+    },
+    toggleVisibleMyBD: function() {
+      if (personalMovieBD.privat) {
+        personalMovieBD.privat = false;
+      }
+      else {
+        personalMovieBD.privat = true;
+      }
+    },
+    wreiteYourGenres : function () {
+      for (let i = 1; i <= 3; i++) {
+        let janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
+        if (janr === '' || janr == null) {
+          console.log('вы ввели не корректный данные или не ввели их вовсе');
+          i--;
+
+        } else {
+          personalMovieBD.genres[i - 1] = janr;
+        }
+
+        personalMovieBD.genres.forEach((item, i) => {
+          console.log(`Любимый жанр ${i + 1} - это ${item}`);
+        });
+      }      
+    },
   }
-
-};
-
-personalMovieBD.start();
-
-personalMovieBD.rememberMyFilms();
-
-personalMovieBD.detectParsonaLevel();
-
-personalMovieBD.wreiteYourGenres();
-
-
-
-console.log("personalMovieBD :>> ", personalMovieBD);
-
-
-//!============================================== #5 ========================================================
+    
+    // function showMyBD(hidden) {
+    //   if (!hidden) {
+    //     console.log(personalMovieBD);
+    //   }
+    // };
+    // showMyBD();
+    personalMovieBD.start();
+    
+    personalMovieBD.rememberMyFilms();
+    
+    personalMovieBD.detectParsonaLevel();
+    
+    personalMovieBD.wreiteYourGenres();
+    
+    
+    
+    console.log("personalMovieBD :>> ", personalMovieBD);
+    
+    
+    //!============================================== #5 ========================================================
 
 // const test = {
 //     name : 'Alex',
