@@ -261,12 +261,13 @@ const personalMovieBD = {
     },
   }
     
-    // function showMyBD(hidden) {
-    //   if (!hidden) {
-    //     console.log(personalMovieBD);
-    //   }
-    // };
-    // showMyBD();
+    function showMyBD(hidden) {
+      if (!hidden) {
+        console.log(personalMovieBD);
+      }
+    };
+    showMyBD();
+    
     personalMovieBD.start();
     
     personalMovieBD.rememberMyFilms();
@@ -274,8 +275,6 @@ const personalMovieBD = {
     personalMovieBD.detectParsonaLevel();
     
     personalMovieBD.wreiteYourGenres();
-    
-    
     
     console.log("personalMovieBD :>> ", personalMovieBD);
     
