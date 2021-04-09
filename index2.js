@@ -190,93 +190,93 @@
 //? "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"
 
 
-const personalMovieBD = {
-  count: 0,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false,
-  start: function() {
-    personalMovieBD.count = +prompt("Сколько фильмов вы уже посмотрели", "");
+// const personalMovieBD = {
+//   count: 0,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false,
+//   start: function() {
+//     personalMovieBD.count = +prompt("Сколько фильмов вы уже посмотрели", "");
 
-    while (personalMovieBD.count == '' || personalMovieBD.count == null || isNaN(personalMovieBD.count)) {
-      personalMovieBD.count = +prompt("Сколько фильмов вы уже посмотрели", "");
-    }
-  },
-  detectParsonaLevel: function() {
+//     while (personalMovieBD.count == '' || personalMovieBD.count == null || isNaN(personalMovieBD.count)) {
+//       personalMovieBD.count = +prompt("Сколько фильмов вы уже посмотрели", "");
+//     }
+//   },
+//   detectParsonaLevel: function() {
     
-    if (personalMovieBD.count < 10) {
-      alert("Посмотрено довольно мало фильмов");
-    } else if (personalMovieBD.count >= 10 && personalMovieBD.count < 30) {
-      alert("Вы классический зритель");
-    } else if (personalMovieBD.count >= 30) {
-      alert("Вы киноман");
-    } else {
-      alert("Error");
-    }
-  },
+//     if (personalMovieBD.count < 10) {
+//       alert("Посмотрено довольно мало фильмов");
+//     } else if (personalMovieBD.count >= 10 && personalMovieBD.count < 30) {
+//       alert("Вы классический зритель");
+//     } else if (personalMovieBD.count >= 30) {
+//       alert("Вы киноман");
+//     } else {
+//       alert("Error");
+//     }
+//   },
   
-  rememberMyFilms: function() {
+//   rememberMyFilms: function() {
     
-    for (let i = 0; i < 2; i++) {
-      const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
-      const rating = prompt("На сколько оцените его?", "");
-      if (
-        nameFilm != null &&
-        rating != null &&
-        nameFilm != "" &&
-        rating != "" &&
-        nameFilm.length < 50
-        ) {
-          personalMovieBD.movies[nameFilm] = rating;
-        } else {
-          console.log("error");
-          i--;
-        }
-      }
-    },
-    toggleVisibleMyBD: function() {
-      if (personalMovieBD.privat) {
-        personalMovieBD.privat = false;
-      }
-      else {
-        personalMovieBD.privat = true;
-      }
-    },
-    wreiteYourGenres : function () {
-      for (let i = 1; i <= 3; i++) {
-        let janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
-        if (janr === '' || janr == null) {
-          console.log('вы ввели не корректный данные или не ввели их вовсе');
-          i--;
+//     for (let i = 0; i < 2; i++) {
+//       const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+//       const rating = prompt("На сколько оцените его?", "");
+//       if (
+//         nameFilm != null &&
+//         rating != null &&
+//         nameFilm != "" &&
+//         rating != "" &&
+//         nameFilm.length < 50
+//         ) {
+//           personalMovieBD.movies[nameFilm] = rating;
+//         } else {
+//           console.log("error");
+//           i--;
+//         }
+//       }
+//     },
+//     toggleVisibleMyBD: function() {
+//       if (personalMovieBD.privat) {
+//         personalMovieBD.privat = false;
+//       }
+//       else {
+//         personalMovieBD.privat = true;
+//       }
+//     },
+//     wreiteYourGenres : function () {
+//       for (let i = 1; i <= 3; i++) {
+//         let janr = prompt(`Ваш любимый жанр под номером ${i+1}`, "");
+//         if (janr === '' || janr == null) {
+//           console.log('вы ввели не корректный данные или не ввели их вовсе');
+//           i--;
 
-        } else {
-          personalMovieBD.genres[i - 1] = janr;
-        }
+//         } else {
+//           personalMovieBD.genres[i - 1] = janr;
+//         }
 
-        personalMovieBD.genres.forEach((item, i) => {
-          console.log(`Любимый жанр ${i + 1} - это ${item}`);
-        });
-      }      
-    },
-  }
+//         personalMovieBD.genres.forEach((item, i) => {
+//           console.log(`Любимый жанр ${i + 1} - это ${item}`);
+//         });
+//       }      
+//     },
+//   }
     
-    function showMyBD(hidden) {
-      if (!hidden) {
-        console.log(personalMovieBD);
-      }
-    };
-    showMyBD();
+//     function showMyBD(hidden) {
+//       if (!hidden) {
+//         console.log(personalMovieBD);
+//       }
+//     };
+//     showMyBD();
     
-    personalMovieBD.start();
+//     personalMovieBD.start();
     
-    personalMovieBD.rememberMyFilms();
+//     personalMovieBD.rememberMyFilms();
     
-    personalMovieBD.detectParsonaLevel();
+//     personalMovieBD.detectParsonaLevel();
     
-    personalMovieBD.wreiteYourGenres();
+//     personalMovieBD.wreiteYourGenres();
     
-    console.log("personalMovieBD :>> ", personalMovieBD);
+//     console.log("personalMovieBD :>> ", personalMovieBD);
     
     
     //!============================================== #5 ========================================================
@@ -314,3 +314,43 @@ const personalMovieBD = {
 //!============================================== #8 ========================================================
 //!============================================== #9 ========================================================
 //!============================================== #10 =======================================================
+
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
+const swiper = new Swiper(...);
+import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+SwiperCore.use([Navigation, Pagination]);
+const swiper = new Swiper(...);
+import Swiper from 'swiper/bundle';
+const swiper = new Swiper(...);
+
+const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const swiper = new Swiper('.swiper-container', {
+  speed: 400,
+  spaceBetween: 100,
+});
+
+const swiper = document.querySelector('.swiper-container').swiper;
+
+// Now you can use all slider methods like
+swiper.slideNext();
