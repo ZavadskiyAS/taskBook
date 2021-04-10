@@ -279,78 +279,10 @@
 //     console.log("personalMovieBD :>> ", personalMovieBD);
     
     
-    //!============================================== #5 ========================================================
-
-// const test = {
-//     name : 'Alex',
-//     age : 29,
-//     email : 'safas@fsf',
-//     status : true,
-//     avatar : false,
-//     video : {
-//         video1 : true,
-//         video2 : true,
-//         video3 : false
-//     },
-//     long : 1.82,
-//     weight : '80kg',
-
-// }
-
-// const testArr = Object.keys(test.email);
-
-// console.log(testArr);
-
-// let arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-
-// let arr2 = [1, 2, 'a', 'b', null, true, false];
-
-// const arr3 = [...arr, ...arr2, 15, 12, 5]
-
-// console.log('arr3 :>> ', arr3);
-
+//!============================================== #5 ========================================================
 //!============================================== #6 ========================================================
 //!=========================================== #7 ========================================================
 //!============================================== #8 ========================================================
 //!============================================== #9 ========================================================
 //!============================================== #10 =======================================================
 
-import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css';
-const swiper = new Swiper(...);
-import SwiperCore, { Navigation, Pagination } from 'swiper/core';
-SwiperCore.use([Navigation, Pagination]);
-const swiper = new Swiper(...);
-import Swiper from 'swiper/bundle';
-const swiper = new Swiper(...);
-
-const swiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-const swiper = new Swiper('.swiper-container', {
-  speed: 400,
-  spaceBetween: 100,
-});
-
-const swiper = document.querySelector('.swiper-container').swiper;
-
-// Now you can use all slider methods like
-swiper.slideNext();
