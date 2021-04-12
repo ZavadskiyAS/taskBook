@@ -282,6 +282,35 @@
 //!============================================== #5 ========================================================
 //!============================================== #6 ========================================================
 //!============================================== #7 ========================================================
+//?Перепишите функцию clone таким образом, чтобы она была способна клонировать переданный как параметр объект.
+
+onsole.log(cat.name, cat.age); // cat 5
+console.log(cat.childs); // [ 'child 1', 'child 2', 'child 3' ]
+ 
+console.log(animal.name, animal.age); // animal 10
+console.log(animal.childs); // [ 'child 1', 'child 2' ]
+ 
+// Отличный вариант для JSON-safe объектов
+let clone = (obj) => JSON.parse(JSON.stringify(obj));
+ 
+// Опасен для рекурсивных объектов или когда имеется конструктор с параметрами
+let clone = obj => {
+ if (obj === null || typeof obj !== "object" || "isActiveClone" in obj)
+   return obj;
+ 
+ if (obj instanceof Date) var temp = new obj.constructor();
+ //or new Date(obj);
+ else var temp = obj.constructor();
+ 
+ for (var key in obj) {
+   if (Object.prototype.hasOwnProperty.call(obj, key)) {
+     obj["isActiveClone"] = null;
+     temp[key] = clone(obj[key]);
+     delete obj["isActiveClone"];
+   }
+ }
+ return temp;
+};
 //!============================================== #8 ========================================================
 //!============================================== #9 ========================================================
 //!============================================== #10 =======================================================
