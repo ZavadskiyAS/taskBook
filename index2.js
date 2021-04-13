@@ -281,36 +281,55 @@
     
 //!============================================== #5 ========================================================
 //!============================================== #6 ========================================================
+//?Выйдите из цикла, изменив только две отмеченные строки. Результат в консоли сейчас останавливается на 9 9. Должен на 5 4.
+// for (let i = 0; i < 10; i++) { //! Эту строку можно изменить
+//   for (let j = 0; j < 10; j++) {
+//     if (i === 5 && j === 5) {
+//       //! Эту строку можно изменить
+//     }
+  
+//     console.log(i, j);
+//   }
+//  }
+
+for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    if (i === 5 && j === 5) {
+      break
+    }
+    console.log(i, j);
+  }
+ }
 //!============================================== #7 ========================================================
 //?Перепишите функцию clone таким образом, чтобы она была способна клонировать переданный как параметр объект.
 
-onsole.log(cat.name, cat.age); // cat 5
-console.log(cat.childs); // [ 'child 1', 'child 2', 'child 3' ]
+// onsole.log(cat.name, cat.age); // cat 5
+// console.log(cat.childs); // [ 'child 1', 'child 2', 'child 3' ]
  
-console.log(animal.name, animal.age); // animal 10
-console.log(animal.childs); // [ 'child 1', 'child 2' ]
+// console.log(animal.name, animal.age); // animal 10
+// console.log(animal.childs); // [ 'child 1', 'child 2' ]
  
-// Отличный вариант для JSON-safe объектов
-let clone = (obj) => JSON.parse(JSON.stringify(obj));
+// // Отличный вариант для JSON-safe объектов
+// let clone = (obj) => JSON.parse(JSON.stringify(obj));
  
-// Опасен для рекурсивных объектов или когда имеется конструктор с параметрами
-let clone = obj => {
- if (obj === null || typeof obj !== "object" || "isActiveClone" in obj)
-   return obj;
+// // Опасен для рекурсивных объектов или когда имеется конструктор с параметрами
+// let clone = obj => {
+//  if (obj === null || typeof obj !== "object" || "isActiveClone" in obj)
+//    return obj;
  
- if (obj instanceof Date) var temp = new obj.constructor();
- //or new Date(obj);
- else var temp = obj.constructor();
+//  if (obj instanceof Date) var temp = new obj.constructor();
+//  //or new Date(obj);
+//  else var temp = obj.constructor();
  
- for (var key in obj) {
-   if (Object.prototype.hasOwnProperty.call(obj, key)) {
-     obj["isActiveClone"] = null;
-     temp[key] = clone(obj[key]);
-     delete obj["isActiveClone"];
-   }
- }
- return temp;
-};
+//  for (var key in obj) {
+//    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+//      obj["isActiveClone"] = null;
+//      temp[key] = clone(obj[key]);
+//      delete obj["isActiveClone"];
+//    }
+//  }
+//  return temp;
+// };
 //!============================================== #8 ========================================================
 //!============================================== #9 ========================================================
 //!============================================== #10 =======================================================
