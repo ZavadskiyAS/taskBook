@@ -24,3 +24,8 @@ const movieDB = {
     ]
 };
 
+const advertisingBlock = document.querySelectorAll(".promo__adv"),
+      genre = document.querySelector(".promo__genre");
+
+advertisingBlock[0].remove();
+genre.innerHTML = "драма";
